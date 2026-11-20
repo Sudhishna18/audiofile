@@ -67,4 +67,51 @@ public class MainActivity extends AppCompatActivity {
                 showToast("Playing audio...");
             }
         });
+        // PAUSE Button - Use Lambda
+        btnPause.setOnClickListener(v -> {
+            if (mediaPlayer != null && mediaPlayer.isPlaying()) {
+                mediaPlayer.pause();
+                showToast("Audio paused");
+            }
+        });
+
+        // STOP Button - Use Lambda
+        btnStop.setOnClickListener(v -> {
+            if (mediaPlayer != null) {
+                if (mediaPlayer.isPlaying()) {
+                    mediaPlayer.stop();
+                }
+                // IMPORTANT: Release the old instance before creating a new one
+                mediaPlayer.release();
+                initializeMediaPlayer();
+                showToast("Audio stopped");
+            }
+        });
+    }
+
+    private void initializeMediaPlayer() {
+        mediaPlayer = MediaPlayer.create(this, R.raw.audio);
+        if (mediaPlayer == null) {
+            showToast("Failed to load audio resource");
+        }
+    }
+
+    private void showToast(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // Always release resources when the Activity is destroyed
+        if (mediaPlayer != null) {
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
+    }
+}
+```
+
+
+
 
