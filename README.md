@@ -33,3 +33,38 @@ Developed by: Sudhishna P
 Registeration Number : 212224040336
 */
 ```
+### MainActivity.java
+```java
+package com.example.pmdexp_3;
+
+import androidx.appcompat.app.AppCompatActivity;
+import android.media.MediaPlayer;
+import android.os.Bundle;
+import android.widget.Button;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+
+    private MediaPlayer mediaPlayer;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // Initialize buttons as local variables
+        Button btnPlay = findViewById(R.id.btnPlay);
+        Button btnPause = findViewById(R.id.btnPause);
+        Button btnStop = findViewById(R.id.btnStop);
+
+        // Create initial MediaPlayer instance
+        initializeMediaPlayer();
+
+        // PLAY Button - Use Lambda
+        btnPlay.setOnClickListener(v -> {
+            if (mediaPlayer != null && !mediaPlayer.isPlaying()) {
+                mediaPlayer.start();
+                showToast("Playing audio...");
+            }
+        });
+
