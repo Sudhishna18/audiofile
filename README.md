@@ -111,7 +111,49 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 ```
+### activity_main.xml
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Simple Audio Player"
+        android:textSize="20sp"
+        android:layout_marginBottom="30dp"/>
+
+    <Button
+        android:id="@+id/btnPlay"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:text="PLAY"
+        android:textSize="16sp"
+        android:layout_margin="10dp"/>
+
+    <Button
+        android:id="@+id/btnPause"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:text="PAUSE"
+        android:textSize="16sp"
+        android:layout_margin="10dp"/>
+
+    <Button
+        android:id="@+id/btnStop"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:text="STOP"
+        android:textSize="16sp"
+        android:layout_margin="10dp"/>
+
+</LinearLayout>
+```
 
 
 
