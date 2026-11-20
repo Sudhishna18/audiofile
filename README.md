@@ -29,15 +29,7 @@ Step 7: Save and run the application.
 ```
 /*
 Program to play and control the audio file”.
-Developed by:
-Registeration Number :
+Developed by: Sudhishna P
+Registeration Number : 212224040336
 */
 ```
-
-## OUTPUT
-
-
-
-
-## RESULT
-   Thus a simple application, to play and control the audio file and to perfrom the start,pause and stop opeartion in Android Studio is developed and executed successfully.
